@@ -1,0 +1,30 @@
+{
+    "name": "kcpt/mysqltools",
+    "description": "KCPT's easy database dump/import commands for MySQL.",
+    "keywords": ["laravel", "kcpt", "console", "commands", "database", "mysql"],
+    "license": "MIT",
+    "homepage": "https://github.com/KCPT19",
+    "support": {
+        "issues": "https://github.com/KCPT19/laravel-mysqltools/issues",
+        "source": "https://github.com/KCPT19/laravel-mysqltools"
+    },
+    "authors": [
+        {
+            "name": "Steven Kohlmeyer",
+            "email": "digital@kcpt.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "illuminate/contracts": "5.4.*",
+        "illuminate/support": "5.4.*",
+        "symfony/console": "~3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "KCPT\\": "src/",
+            "KCPT\\MySQLTools\\": "src/MySQLTools"
+        }
+    },
+    "minimum-stability": "dev"
+}
