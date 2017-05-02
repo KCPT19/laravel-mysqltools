@@ -45,8 +45,8 @@ class Clear extends Command
         }
 
         $colname = 'Tables_in_' . env('DB_DATABASE');
-
         $tables = DB::select('SHOW TABLES');
+        $droplist = [];
 
         foreach($tables as $table) {
 
@@ -54,13 +54,21 @@ class Clear extends Command
 
         }
 
-        $droplist = implode(',', $droplist);
+        if(count($droplist) > 0) {
 
-        DB::beginTransaction();
-        DB::statement("DROP TABLE $droplist");
-        DB::commit();
+            $droplist = implode(',', $droplist);
+            DB::beginTransaction();
+            DB::statement("DROP TABLE $droplist");
+            DB::commit();
+            $this->comment(PHP_EOL . "If no errors showed up, all tables were dropped" . PHP_EOL);
 
-        $this->comment(PHP_EOL."If no errors showed up, all tables were dropped".PHP_EOL);
+        } else {
+
+            $this->comment(PHP_EOL . "The database is empty, No tables to drop." . PHP_EOL);
+
+        }
+
+
 
     }
 }
