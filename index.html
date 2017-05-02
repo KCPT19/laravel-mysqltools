@@ -3,6 +3,29 @@
     <head>
         <meta charset="utf-8">
         <title>KCPT Laravel MySQL Tools</title>
+        <style media="screen">
+            body {
+                background: #dddddd;
+                background: -moz-linear-gradient(top, #dddddd 0%, #cccccc 18%, #ffffff 100%);
+                background: -webkit-linear-gradient(top, #dddddd 0%,#cccccc 18%,#ffffff 100%);
+                background: linear-gradient(to bottom, #dddddd 0%,#cccccc 18%,#ffffff 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#ffffff',GradientType=0 );
+                font-size:20px;
+                max-width:1200px;
+                margin:auto;
+                padding:15px;
+                text-align:center;
+            }
+            p {
+                text-align:left;
+            }
+            h2 {
+                margin:25px 0 15px;
+            }
+            img {
+                display:block;
+            }
+        </style>
     </head>
     <body>
         <span>
@@ -26,18 +49,27 @@
             </ul>
         </p>
         <p id="dbclear">
-            <img src="db-clear.png" alt="Database Clear Command">
+            <h2>
+                artisan db:clear
+            </h2>
+            <img src="db-clear.png" alt="Database Clear Command"><br>
             This command deletes all tables in the current database.
         </p>
         <p id="dbdump">
-            <img src="db-dump.png" alt="Database Dump Command">
+            <h2>
+                artisan db:dump
+            </h2>
+            <img src="db-dump.png" alt="Database Dump Command"><br>
             This command will automatically create a SQL dump file in the current projects folder.<br>
             This file is named: db-[environment name]-[today's date].sql
         </p>
         <p id="dbimport">
-            <img src="db-import-autocomplete.png" alt="Database Import Autocomplete">
+            <h2>
+                artisan db:import
+            </h2>
+            <img src="db-import-autocomplete.png" alt="Database Import Autocomplete"><br>
             This command imports a database from a .sql file.  This command has auto complete
-            so you can press the first letter or two and then arrow through all possibilities.
+            so you can press the first letter or two and then arrow through all possibilities.<br>
             <img src="db-import.png" alt="Database Imported">
         </p>
 
