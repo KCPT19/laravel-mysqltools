@@ -31,7 +31,7 @@ This command will create a .sql dump file in the current project's folder named:
 
 This command imports the database from a .sql file. This command has autocomplete.
 
-!(https://kcpt19.github.io/laravel-mysqltools/db-import.png "Database Imported")
+![Database Imported](https://kcpt19.github.io/laravel-mysqltools/db-import.png)
 
 
 
