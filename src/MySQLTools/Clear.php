@@ -4,39 +4,19 @@ namespace KCPT\MySQLTools;
 
 use DB;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Schema;
 
 class Clear extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
+
     protected $signature = 'db:clear';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Clear Database of all tables & data.';
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         parent::__construct();
     }
 
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
     public function handle()
     {
 
@@ -67,8 +47,6 @@ class Clear extends Command
             $this->comment(PHP_EOL . "The database is empty, No tables to drop." . PHP_EOL);
 
         }
-
-
 
     }
 }

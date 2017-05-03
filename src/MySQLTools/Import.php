@@ -6,41 +6,27 @@ use Illuminate\Console\Command;
 
 class Import extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
+
     protected $signature = 'db:import';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Import a database dump file.';
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         parent::__construct();
     }
 
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
     public function handle()
     {
 
         $files = array();
         foreach (glob("*.sql") as $file) {
             $files[] = $file;
+        }
+
+        if( count($files) < 1 ) {
+            $this->error(PHP_EOL . "No .sql files found in current folder!" . PHP_EOL . "Must move the .sql file to the current directory" . PHP_EOL);
+            return;
         }
 
         $file = $this->anticipate('Enter database dump filename', $files);
