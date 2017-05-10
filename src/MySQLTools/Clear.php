@@ -38,7 +38,11 @@ class Clear extends Command
 
             $droplist = implode(',', $droplist);
             DB::beginTransaction();
+            DB::statement("SET foreign_key_checks = 0;");
+            DB::commit();
             DB::statement("DROP TABLE $droplist");
+            DB::commit();
+            DB::statement("SET foreign_key_checks = 1;");
             DB::commit();
             $this->comment(PHP_EOL . "If no errors showed up, all tables were dropped" . PHP_EOL);
 
